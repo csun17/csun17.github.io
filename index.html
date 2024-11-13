@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Affirmation</title>
-<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-=======
->>>>>>> 0c006663554f0676b363695c530e039520a81f62
     <style>
         /* General body styling */
         body {
@@ -17,21 +14,31 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             background: url('different-shapes-clouds-sky.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #ffffff;
             padding: 20px;
             box-sizing: border-box;
+            position: relative;
         }
 
         /* Navigation dropdown styling */
         .nav-dropdown {
-            position: absolute;
+            position: fixed;
             top: 20px;
             left: 20px;
-            width: 150px;
+            width: 120px;
+        }
+
+        .nav-dropdown select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 16px;
         }
 
         /* Affirmation box styling */
@@ -40,46 +47,12 @@
             padding: 20px;
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 10px;
-            max-width: 100%;
-            width: 100%;
+            width: 90%;
+            max-width: 600px;
             background-color: rgba(0, 0, 0, 0.5);
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-
-        /* Footer styling */
-        footer {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 10px;
-            box-sizing: border-box;
-            position: absolute;
-            bottom: 20px;
-        }
-
-        /* Footer text */
-        footer div:first-child {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.5em;
-            font-weight: 700;
-        }
-
-        footer div {
-            font-size: 0.9em;
-        }
-
-        /* Social media icons */
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-size: 24px;
-        }
-        
-        footer a:hover {
-            opacity: 0.8;
+            margin: 60px auto 20px;
+            font-size: 1.1em;
         }
 
         /* Add this to your style section */
@@ -90,17 +63,84 @@
             border-radius: 50%;
             color: white;
             cursor: pointer;
-            margin-top: 15px;
+            width: 60px;
+            height: 60px;
+            margin: 20px auto;
+            font-size: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
-            margin: 20px auto;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .share-button:hover {
             background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Media queries for different screen sizes */
+        @media (max-width: 480px) {
+            .affirmation-box {
+                font-size: 1em;
+                padding: 15px;
+                margin-top: 70px;
+            }
+        }
+
+        /* Prevent text selection */
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .brand-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .brand-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3em;
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            padding: 5px;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Update affirmation-box margin */
+        .affirmation-box {
+            margin: 60px auto 20px;
+        }
+
+        /* Media query for mobile */
+        @media (max-width: 480px) {
+            .brand-name {
+                font-size: 1.2em;
+            }
+
+            .social-links a {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
@@ -117,41 +157,21 @@
     <div class="affirmation-box">
         <div id="affirmation" class="affirmation"></div>
     </div>
-<<<<<<< HEAD
     <button onclick="shareAffirmation()" class="share-button">
         <i class="fas fa-share-alt"></i>
     </button>
 
-    <!-- Footer with company name and social links -->
-    <footer>
-        <div>Lucky Beings</div> 
-        <div style="display: flex; gap: 10px;">
+    <div class="brand-container">
+        <div class="brand-name">Lucky Beings</div> 
+        <div class="social-links">
             <a href="https://www.instagram.com/lucky.beings" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
             <a href="https://www.tiktok.com/@lucky_beings" target="_blank">
                 <i class="fab fa-tiktok"></i>
             </a>
-            <a href="https://yourshopifyurl.com" target="_blank">
-                <i class="fab fa-shopify"></i>
-=======
-
-    <!-- Footer with company name and social links -->
-    <footer>
-        <div>Lucky Beings</div>
-        <div style="display: flex; gap: 10px;">
-            <a href="https://www.instagram.com/yourinstagram" target="_blank">
-                <img src="/path/to/instagram-icon.png" alt="Instagram">
-            </a>
-            <a href="https://www.tiktok.com/@yourtiktok" target="_blank">
-                <img src="/path/to/tiktok-icon.png" alt="TikTok">
-            </a>
-            <a href="https://yourshopifyurl.com" target="_blank">
-                <img src="/path/to/shopify-icon.png" alt="Shopify">
->>>>>>> 0c006663554f0676b363695c530e039520a81f62
-            </a>
         </div>
-    </footer>
+    </div>
 
     <script>
         const affirmations = [
