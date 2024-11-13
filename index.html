@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Affirmation</title>
+<<<<<<< HEAD
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+=======
+>>>>>>> 0c006663554f0676b363695c530e039520a81f62
     <style>
         /* General body styling */
         body {
@@ -56,14 +61,46 @@
         }
 
         /* Footer text */
+        footer div:first-child {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
         footer div {
             font-size: 0.9em;
         }
 
         /* Social media icons */
-        footer img {
-            width: 24px;
-            height: 24px;
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        /* Add this to your style section */
+        .share-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            margin: 20px auto;
+        }
+
+        .share-button:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -80,6 +117,24 @@
     <div class="affirmation-box">
         <div id="affirmation" class="affirmation"></div>
     </div>
+<<<<<<< HEAD
+    <button onclick="shareAffirmation()" class="share-button">
+        <i class="fas fa-share-alt"></i>
+    </button>
+
+    <!-- Footer with company name and social links -->
+    <footer>
+        <div>Lucky Beings</div> 
+        <div style="display: flex; gap: 10px;">
+            <a href="https://www.instagram.com/lucky.beings" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@lucky_beings" target="_blank">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://yourshopifyurl.com" target="_blank">
+                <i class="fab fa-shopify"></i>
+=======
 
     <!-- Footer with company name and social links -->
     <footer>
@@ -93,6 +148,7 @@
             </a>
             <a href="https://yourshopifyurl.com" target="_blank">
                 <img src="/path/to/shopify-icon.png" alt="Shopify">
+>>>>>>> 0c006663554f0676b363695c530e039520a81f62
             </a>
         </div>
     </footer>
@@ -142,6 +198,16 @@
             if (page !== 'affirmation') {
                 window.location.href = page;
             }
+        }
+
+        function shareAffirmation() {
+            const affirmationText = document.getElementById("affirmation").textContent;
+            navigator.clipboard.writeText(affirmationText).then(() => {
+                alert("Affirmation copied to clipboard!");
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert("Failed to copy affirmation. Please try again.");
+            });
         }
 
         displayRandomAffirmation();
