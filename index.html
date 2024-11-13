@@ -2,67 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lucky beings affirmation </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Affirmation</title>
     <style>
+        /* General body styling */
         body {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             margin: 0;
-            background: url('different-shapes-clouds-sky.jpg') no-repeat center center fixed;
+            background: url('/Users/csun/Documents/GitHub/csun17.github.io/different-shapes-clouds-sky.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        .quote-box {
+
+        /* Navigation dropdown styling */
+        .nav-dropdown {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px;
+        }
+
+        /* Affirmation box styling */
+        .affirmation-box {
             text-align: center;
             padding: 20px;
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 10px;
-            max-width: 500px;
+            max-width: 100%;
+            width: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            font-size: 1.2em;
         }
-        .quote {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+
+        /* Footer styling */
+        footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 20px;
         }
-        .author {
-            font-size: 1em;
-            color: #cccccc;
+
+        /* Footer text */
+        footer div {
+            font-size: 0.9em;
+        }
+
+        /* Social media icons */
+        footer img {
+            width: 24px;
+            height: 24px;
         }
     </style>
 </head>
 <body>
-    <div class="quote-box">
-        <div id="quote" class="quote"></div>
-        <div id="author" class="author"></div>
+    <!-- Navigation dropdown -->
+    <div class="nav-dropdown">
+        <select onchange="navigatePage(this.value)">
+            <option value="affirmation">Affirmation</option>
+            <option value="wellness-journal.html">Wellness Journal</option>
+        </select>
     </div>
 
-    <script>
-        const quotes = [
-{ text: "Embrace each day with gratitude and a hopeful heart.", author: "luckybeings" },
-{ text: "You are capable of amazing things; believe in yourself.", author: "luckybeings" },
-{ text: "Positivity attracts abundance and joy into your life.", author: "luckybeings" },
-{ text: "Trust the journey, even when you don’t understand it.", author: "luckybeings" },
-{ text: "You have the power to create a life full of happiness and peace.", author: "luckybeings" },
-{ text: "Every day is a new beginning, filled with limitless possibilities.", author: "luckybeings" },
-{ text: "Radiate love, and it will return to you in countless ways.", author: "luckybeings" },
-{ text: "Believe in your dreams and work towards them with passion.", author: "luckybeings" },
-{ text: "Let go of what you cannot control and find peace in the present.", author: "luckybeings" },
-{ text: "Your potential is boundless; rise above doubts and shine.", author: "luckybeings" }
-];
+    <!-- Affirmation box -->
+    <div class="affirmation-box">
+        <div id="affirmation" class="affirmation"></div>
+    </div>
 
-        function displayRandomQuote() {
-            const randomIndex = Math.floor(Math.random() * quotes.length);
-            const quote = quotes[randomIndex];
-            document.getElementById("quote").textContent = `"${quote.text}"`;
-            document.getElementById("author").textContent = `@ ${quote.author}`;
+    <!-- Footer with company name and social links -->
+    <footer>
+        <div>Lucky Beings</div>
+        <div style="display: flex; gap: 10px;">
+            <a href="https://www.instagram.com/yourinstagram" target="_blank">
+                <img src="/path/to/instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@yourtiktok" target="_blank">
+                <img src="/path/to/tiktok-icon.png" alt="TikTok">
+            </a>
+            <a href="https://yourshopifyurl.com" target="_blank">
+                <img src="/path/to/shopify-icon.png" alt="Shopify">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const affirmations = [
+            { text: "Embrace each day with gratitude and a hopeful heart." },
+            { text: "You are capable of amazing things; believe in yourself." },
+            { text: "Positivity attracts abundance and joy into your life." },
+            { text: "Trust the journey, even when you don’t understand it." },
+            { text: "You have the power to create a life full of happiness and peace." },
+            { text: "Every day is a new beginning, filled with limitless possibilities." },
+            { text: "Radiate love, and it will return to you in countless ways." },
+            { text: "Believe in your dreams and work towards them with passion." },
+            { text: "Let go of what you cannot control and find peace in the present." },
+            { text: "Your potential is boundless; rise above doubts and shine." },
+            
+            { text: "I am fully present in each moment, open to all that life brings my way. I release distractions and allow myself to experience the beauty around me." },
+			{ text: "My mind is calm, and I choose peace over worry with every breath I take. I trust that everything will unfold as it’s meant to in time." },
+			{ text: "I embrace each challenge as an opportunity to grow and learn something new about myself. I am capable of rising above any difficulty that comes my way." },
+			{ text: "My heart is filled with gratitude for the beauty and abundance in my life. I focus on what I have, knowing it is enough and brings me joy." },
+			{ text: "I am resilient, and I overcome obstacles with grace, strength, and determination. Life's trials shape me into a wiser, more compassionate person." },
+			{ text: "I trust the process of life and am patient with my own journey, knowing that growth takes time. Every step I take is bringing me closer to my goals." },
+			{ text: "I release what I cannot control and focus on what I can, finding peace in letting go. I am free from the weight of expectations I cannot meet." },
+			{ text: "My actions are intentional, bringing me closer to my goals and dreams each day. I am mindful of the choices I make, and they reflect my highest self." },
+			{ text: "I am kind to myself, accepting my imperfections as a natural part of being human. I honor who I am, knowing I am always enough just as I am." },
+			{ text: "I breathe in calmness and breathe out stress, allowing peace to flow through me. Each breath centers me, grounding me in the present moment." },
+			{ text: "I honor my journey, trusting that every experience serves a purpose in my growth. My unique path is unfolding perfectly, even if I cannot see it all." },
+			{ text: "My mind is clear, my body is strong, and my soul is at peace, guiding me through each day. I am in tune with my needs and listen to what my body and mind tell me." },
+			{ text: "I welcome change as an essential part of my growth and embrace it with open arms. Each change brings me closer to becoming the person I’m meant to be." },
+			{ text: "I choose thoughts that nourish my mind and spirit, filling me with positivity and hope. I am careful with my inner dialogue, knowing that my words shape my reality." },
+			{ text: "I am grateful for the abundance in my life, both in big and small ways. My heart feels full, and I am constantly reminded of life’s blessings." },
+			{ text: "I forgive myself for past mistakes and focus on the progress I continue to make. I honor my journey and let go of what no longer serves me." },
+			{ text: "I have the strength to handle whatever comes my way, trusting in my resilience. I face challenges with courage and confidence, knowing I am capable." },
+			{ text: "I create positive energy in my life with every choice I make and every thought I entertain. I am a source of light for myself and those around me." },
+			{ text: "I am grounded, balanced, and filled with inner peace, allowing me to navigate life with clarity. I return to my center whenever I feel overwhelmed or lost." },
+			{ text: "I am worthy of all the love, joy, and abundance the universe has to offer, and I welcome it with open arms. My life is filled with purpose, and I trust that all good things are meant for me." }
+ ];
+
+        function displayRandomAffirmation() {
+            const randomIndex = Math.floor(Math.random() * affirmations.length);
+            const affirmation = affirmations[randomIndex];
+            document.getElementById("affirmation").textContent = affirmation.text;
         }
 
-        displayRandomQuote();
+        function navigatePage(page) {
+            if (page !== 'affirmation') {
+                window.location.href = page;
+            }
+        }
+
+        displayRandomAffirmation();
     </script>
 </body>
 </html>
